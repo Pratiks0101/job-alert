@@ -9,6 +9,12 @@ savebtn.addEventListener("click", ()=> {
         return
     }else{
         console.log(error.innerText= "")
-        localStorage.setItem("job titles", jobs.value.trim())
+        localStorage.setItem("jobTitles", jobs.value.trim())
     }
 })
+
+if(localStorage.getItem("jobTitle") === null){
+    return
+}else{
+    localStorage.getItem("jobTitle")
+}
