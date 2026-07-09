@@ -7,10 +7,11 @@
     </head>
 
     <body>
-        <label for="jobs"> Job Titles :
-            <input type="text" name="jobs" id="jobs" placeholder="software developer, front-end developer">
-        </label>
-        <button id="save-button">Save Preferences</button>
+        <label for="jobs"> Job Titles :</label>
+        <div class="job-area">
+            <input type="text" name="jobs" id="jobs" class="jobs" placeholder="software developer, front-end developer">
+            <button id="save-button" class="save-button">Save</button>
+        </div>
         <p id="error"></p>
         <script type="module" src="popup.js"></script>
     </body>
