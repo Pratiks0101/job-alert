@@ -13,8 +13,9 @@ savebtn.addEventListener("click", ()=> {
     }
 })
 
-if(localStorage.getItem("jobTitle") === null){
-    return
-}else{
-    localStorage.getItem("jobTitle")
+
+const showSavedJobs = localStorage.getItem("jobTitles")
+
+if (showSavedJobs !== null) {
+    jobs.value = showSavedJobs
 }
