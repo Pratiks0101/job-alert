@@ -19,3 +19,9 @@ const showSavedJobs = localStorage.getItem("jobTitles")
 if (showSavedJobs !== null) {
     jobs.value = showSavedJobs
 }
+
+const array = jobs.value.split(',')
+
+const trimmedJob = array.map(job => {
+    return job.trim()
+})
