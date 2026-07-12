@@ -4,24 +4,28 @@ const error = document.getElementById("error")
 
 savebtn.addEventListener("click", ()=> {
     const errMsg = error.innerText = "Please write atleast one job title"
+
     if(jobs.value.trim() === ""){
         console.log(errMsg)
         return
-    }else{
+    }else
+        {
         console.log(error.innerText= "")
-        localStorage.setItem("jobTitles", jobs.value.trim())
+        const array = jobs.value.split(',')
+
+        const trimmedJobTitle = array.map(job => {
+            return job.trim()
+        })
+
+        localStorage.setItem("jobTitles", JSON.stringify(trimmedJobTitle))
     }
+
 })
 
 
 const showSavedJobs = localStorage.getItem("jobTitles")
 
 if (showSavedJobs !== null) {
-    jobs.value = showSavedJobs
+    const parsedData = JSON.parse(showSavedJobs)
+    jobs.value = parsedData.join(", ")
 }
-
-const array = jobs.value.split(',')
-
-const trimmedJob = array.map(job => {
-    return job.trim()
-})
